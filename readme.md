@@ -256,3 +256,156 @@ This lecture demonstrates a **production-grade GenAI pattern**, widely used in:
 - Document Q&A systems
 
 ---
+
+## 📚 Lecture 09 – AI Agent with PDF based RAG (Final Capstone Project)
+
+### 🔧 What You'll Learn in This Lecture:
+
+✅ Understanding **AI Agent style workflows**  
+✅ Loading and parsing **PDF documents**  
+✅ Extracting raw text from PDFs  
+✅ Splitting large documents into **overlapping chunks**  
+✅ Generating **vector embeddings** for each chunk  
+✅ Storing embeddings in a **Vector Database (ChromaDB)**  
+✅ Using **Retrievers** to fetch relevant document context  
+✅ Building a **RAG-based AI Agent** using LangChain  
+✅ Preventing hallucinations by grounding answers in documents  
+✅ Designing a **modular, production-style GenAI project**
+
+---
+
+### 🧠 Key Concepts Explained:
+
+#### 🤖 AI Agent Workflow
+
+An AI Agent follows a structured pipeline instead of a single LLM call:
+
+```
+📄 Load PDF Document
+        ↓
+✂️ Split Text into Chunks
+        ↓
+🧬 Generate Vector Embeddings
+        ↓
+📦 Store Embeddings in Vector Database
+        ↓
+🔍 Retrieve Relevant Context (RAG)
+        ↓
+🤖 LLM Generates Final Answer
+```
+
+This architecture allows the AI to **reason over external knowledge**, not just its training data.
+
+---
+
+#### 📄 PDF Ingestion
+
+- A PDF file (e.g. **resume.pdf**) is loaded from the `data/` folder
+- Text is extracted using a PDF parser
+- This extracted text becomes the **knowledge source** for the AI
+
+---
+
+#### ✂️ Chunking Strategy
+
+- Large documents cannot be sent directly to LLMs
+- Text is split into smaller overlapping chunks
+- Chunk overlap ensures **context continuity**
+- Each chunk is treated as an independent knowledge unit
+
+---
+
+#### 🧬 Embeddings & Vector Store
+
+- Each chunk is converted into a **vector embedding**
+- Embeddings capture the **semantic meaning** of text
+- Vectors are stored in **ChromaDB**
+- Enables fast **semantic similarity search**
+
+---
+
+#### 🔍 Retrieval Augmented Generation (RAG)
+
+- User question is converted into an embedding
+- Vector DB retrieves **most relevant chunks**
+- Retrieved chunks are passed as **context** to the LLM
+- The LLM is instructed to answer **only from this context**
+- If information is missing → model replies `"I don't know"`
+
+This eliminates hallucinations and improves trustworthiness.
+
+---
+
+### 🛠️ What We Built:
+
+A **PDF-based AI Agent application** where:
+
+- A resume PDF is loaded from the local filesystem
+- The resume content is chunked and embedded
+- Embeddings are stored in a vector database
+- User can ask natural language questions like:
+  - _"What technologies does this person know?"_
+  - _"What is the work experience?"_
+  - _"Does the candidate know Python?"_
+- The AI answers **only using the resume content**
+- If the answer is not present in the PDF, it responds honestly
+
+---
+
+## 💻 Tech Stack
+
+| Technology                                                                                               | Description                                                            |
+| -------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat&logo=node.js&logoColor=white)          | JavaScript runtime used to build the backend GenAI application         |
+| ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat&logo=typescript&logoColor=white) | Strongly typed JavaScript for scalable and maintainable code           |
+| ![LangChain](https://img.shields.io/badge/LangChain-0B5ED7?style=flat)                                   | Framework for building LLM-powered applications and AI agents          |
+| ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat&logo=openai&logoColor=white)             | Used for embeddings generation and LLM-based responses                 |
+| ![ChromaDB](https://img.shields.io/badge/ChromaDB-FF6F00?style=flat)                                     | Vector database for storing and retrieving semantic embeddings         |
+| ![Vector Embeddings](https://img.shields.io/badge/Vector_Embeddings-4CAF50?style=flat)                   | Numerical representation of text used for semantic search              |
+| ![RAG](https://img.shields.io/badge/RAG-Retrieval_Augmented_Generation-blue?style=flat)                  | Technique to generate answers grounded in external document data       |
+| ![PDF Parsing](https://img.shields.io/badge/PDF_Parsing-FF0000?style=flat)                               | Extracts raw text content from PDF documents                           |
+| ![Text Chunking](https://img.shields.io/badge/Text_Chunking-7952B3?style=flat)                           | Splits large documents into manageable overlapping chunks              |
+| ![AI Agent](https://img.shields.io/badge/AI_Agent-FF9800?style=flat)                                     | Agent-style workflow combining retrieval, reasoning, and generation    |
+| ![dotenv](https://img.shields.io/badge/dotenv-ECD53F?style=flat&logo=dotenv&logoColor=black)             | Manages environment variables securely                                 |
+| ![Chroma Retriever](https://img.shields.io/badge/Semantic_Search-2196F3?style=flat)                      | Retrieves the most relevant document chunks based on vector similarity |
+| ![Prompt Template](https://img.shields.io/badge/Prompt_Templates-9C27B0?style=flat)                      | Structured prompts to control and ground LLM responses                 |
+
+---
+
+### 🎯 Why This Project Is Important:
+
+This final project demonstrates **real-world GenAI architecture**, used in:
+
+- Resume analyzers
+- Knowledge assistants
+- Internal company chatbots
+- Document Q&A systems
+- AI agents with memory
+
+It combines **LangChain + RAG + Vector Databases + LLMs** into a single, production-ready workflow.
+
+---
+
+### 🧠 Interview Ready Explanation:
+
+> “I built a PDF-based AI Agent using LangChain, where documents are chunked, embedded into a vector database, retrieved using semantic search, and passed to an LLM via a RAG pipeline to generate grounded answers.”
+
+---
+
+### 🚀 Final Outcome:
+
+By the end of this lecture, you will have:
+
+✅ A complete understanding of **RAG systems**  
+✅ Hands-on experience with **AI Agents**  
+✅ A **portfolio-ready GenAI project**  
+✅ Strong foundation for advanced topics like:
+
+- Multi-document RAG
+- Conversational memory
+- Tool-using AI agents
+- API & UI based GenAI apps
+
+---
+
+🎉 **This marks the completion of the core Generative AI learning journey with Node.js & LangChain.**
