@@ -89,3 +89,36 @@ This lecture demonstrates how GenAI goes **beyond chat**, enabling:
 - Creative & production-ready AI workflows
 
 ---
+
+## 📚 Lecture 05 – Vector Embeddings & Similarity Search
+
+### 🔧 What You'll Learn in This Lecture:
+
+✅ What are **Vector Embeddings** and why they are important in GenAI  
+✅ Converting text into **numerical vector representations**  
+✅ Understanding **semantic meaning** through embeddings  
+✅ What is **Cosine Similarity** and how it works  
+✅ What is **Dot Product Similarity**  
+✅ Difference between **Cosine Similarity vs Dot Similarity**  
+✅ Measuring similarity between two pieces of text
+
+### 🧠 Key Concepts Explained:
+
+- **Vector Embeddings**
+
+  - Text is converted into high-dimensional vectors
+  - Similar meanings → vectors closer to each other
+
+- **Cosine Similarity**
+
+  - Measures the **angle** between two vectors
+  - Focuses on direction, not magnitude
+  - Value ranges between `-1` and `1`
+  - Commonly used in semantic search
+
+- **Dot Product Similarity**
+  - Measures similarity based on vector multiplication
+  - Depends on both **direction and magnitude**
+  - Faster but less normalized than cosine similarity
+
+---

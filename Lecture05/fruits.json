@@ -1,0 +1,7 @@
+[
+  { "id": "1", "name": "Orange", "description": "A citrus fruit rich in vitamin C" },
+  { "id": "2", "name": "Lemon", "description": "A sour citrus fruit yellow in color" },
+  { "id": "3", "name": "Apple", "description": "A sweet red fruit" },
+  { "id": "4", "name": "Banana", "description": "A long yellow sweet fruit" },
+  { "id": "5", "name": "Grapefruit", "description": "A large bitter citrus fruit" }
+]
